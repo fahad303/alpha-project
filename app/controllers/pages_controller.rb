@@ -4,7 +4,7 @@ class PagesController < ApplicationController
        
    end
     
-   def about
+   def article
       
    end
 end
