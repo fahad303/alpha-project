@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
    
+  # before_action :set_article, only: [:edit, :update, :show, :destroy] (for removing this same line @article = Article.find(params[:id]) using many times in which functions )
+   
    def index
       @articles = Article.all 
    end
