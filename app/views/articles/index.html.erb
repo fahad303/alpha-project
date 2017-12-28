@@ -1,4 +1,4 @@
-<h1>All Articles</h1>
+<h2>All Articles</h2>
 
 <p>
     <%= link_to 'Create New Articles', new_article_path %>    
@@ -15,6 +15,7 @@
         <td> <%= article.description %></td>
         <td> <%= link_to 'edit' , edit_article_path(article) %> </td>
         <td> <%= link_to 'show' , article_path(article) %> </td>
+        <td> <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are You Sure!"} %> </td>
     </tr>
     <% end %>
 </table>
