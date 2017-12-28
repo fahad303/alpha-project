@@ -1,4 +1,9 @@
 <h2>New Article</h2>
 
+<%= link_to 'Edit this article', edit_article_path(@article) %> </br>
+
 <p>Title: <%= @article.title %> </p>
 <p>Description: <%= @article.description %> </p>
+
+
+<%= link_to 'back to articles', articles_path %>
