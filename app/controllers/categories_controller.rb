@@ -21,7 +21,29 @@ class CategoriesController < ApplicationController
     end
     
     def show
-        
+        @category = Category.find(params[:id])
+        @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
+    end
+    
+    def edit
+        @category = Category.find(params[:id])
+    end
+    
+    def update
+       @category = Category.find(params[:id])
+       if @category.update(category_params)
+           flash[:success] = "Your Category has updated"
+           redirect_to categories_path
+       else
+          render 'edit' 
+       end
+    end
+    
+    def destroy
+       @category = Category.find(params[:id])
+       @category.destroy
+       flash[:success] = "Your Category has deleted"
+       redirect_to categories_path
     end
     
     def require_admin
