@@ -19,6 +19,7 @@ $navbar-default-bg: black;
 .jumbotron {
     background-image: asset-url('Blog-Cover.jpg');
     background-size: cover;
+    height: 450px;
 }
 
 .article-title {
